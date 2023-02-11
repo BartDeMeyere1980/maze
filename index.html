@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+        <title></title>
+    </head>
+    <body>
+        <div class="header">
+            <div class="block">
+                <select id="mazegenerator">
+                    <option>select one...</option>
+                    <option value="0">Hunt and kill</option>
+                    <option value="1">Sidewinder</option>
+                    <option value="2">Prims algorithm</option>
+                    <option value="3">kruskal algorithm</option>
+                    <option value="4">recursive backtracking</option>
+                </select>
+            </div>
+            <div class="block">
+                <button id="resetbtn">reset</button>
+            </div>
+        </div>
+        <canvas></canvas>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="classes/node.js"></script>
+        <script src="functions.js"></script>
+        <script src="generators/huntandkill.js"></script>
+        <script src="generators/sidewinder.js"></script>
+        <script src="generators/prim.js"></script>
+        <script src="generators/kruskal.js"></script>
+        <script src="generators/recursivebacktracker.js"></script>
+        <script src="solve.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
