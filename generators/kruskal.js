@@ -44,7 +44,7 @@ function kruskal(){
     
     currentcell = nodes[Math.floor(Math.random() * nodes.length)]
 
-    setTimeout(kruskal , 800)
+    setTimeout(kruskal , 5)
 }
 
 function mazeComplete(){
