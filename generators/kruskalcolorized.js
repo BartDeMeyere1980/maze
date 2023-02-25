@@ -1,24 +1,24 @@
-function kruskal(){
+function kruskalcolorized(){
 
     if(currentcell === undefined){
 
         currentcell = nodes[Math.floor(Math.random() * nodes.length)]
 
-        //nodes.forEach(node => { node.displayset = true })
+        nodes.forEach(node => { node.displaycolor = true })
     }
 
     //when done
     if(mazeComplete()){
 
-        console.log("done")
+        console.log("kruskal colorized done")
         nodes.forEach((node,index) => { 
 
             node.merged = false
             node.set = index + 1
             node.displaycolor = false
+            node.color = "rgba(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) +  "," + .2 + ")"
         
         })
-        
         currentcell = undefined
         //solve maze
         runfloodfill = true
@@ -41,11 +41,16 @@ function kruskal(){
         set1 = currentcell.set 
         set2 = nextcell.set
 
+        color1 = currentcell.color
+        color2 = nextcell.color
+
         nodes.forEach(node => {
 
             if(node.set === set2){
 
                 node.set = set1
+                node.color = color1
+
             }
         })
 
@@ -54,6 +59,7 @@ function kruskal(){
             if(node.set === set1){
 
                 node.set = set2
+                node.color = color2
             }
         })
 
@@ -61,7 +67,7 @@ function kruskal(){
     
     currentcell = nodes[Math.floor(Math.random() * nodes.length)]
 
-    setTimeout(kruskal , 10)
+    setTimeout(kruskalcolorized , 10)
 }
 
 function mazeComplete(){
