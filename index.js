@@ -13,7 +13,7 @@ canvas.width = w * devicePixelRatio
 canvas.height = h * devicePixelRatio 
 
 //variables
-let columns = 50
+let columns = 75
 let size = canvas.width / columns
 let rows = Math.floor(canvas.height / size)
 let nodes = []
@@ -219,6 +219,8 @@ $("#mazegenerator").on("change" , function(){
         case "2": reset(); prims(); candrag = false; break;
         case "3": reset(); kruskal(); candrag = false; break;
         case "4": reset(); recursivebacktracker(); candrag = false; break;
+        case "5": reset(); kruskalcolorized(); candrag = false; break;
+        case "6": reset(); randomwalker("rgba(30,144,255,.5)" , nodes[Math.floor(Math.random() * nodes.length)]); candrag = false; break;
     }
 
     $("#mazegenerator").prop("disabled" , "disabled")
