@@ -14,9 +14,15 @@ class Node{
         this.visited = false
         this.value = 0
         this.type = "node"
+        //kruskal
         this.set = set
         this.merged = false;
         this.displayset = false
+        //colorized kruskal
+        this.displaycolor = false 
+        this.color = "rgba(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) +  "," + .2 + ")"
+        //color random walker
+        this.fillcolor = undefined 
     }
 
     render(){
@@ -120,13 +126,38 @@ class Node{
             c.translate(this.x , this.y)
             c.beginPath()
             c.fillStyle = "black"
-            c.font = this.size/5 + "px Roboto"
+            c.font = this.size/8 + "px Roboto"
             c.textAlign = "center"
             c.textBaseline = "middle"
             c.fillText(this.set , 0 ,0)
             c.closePath()
             c.restore()  
 
+        }
+
+        if(this.displaycolor){
+
+            c.save()
+            c.translate(this.x , this.y)
+            c.beginPath()
+            c.fillStyle = this.color
+            c.rect(-this.size/2 , -this.size/2 , this.size , this.size)
+            c.fill()
+            c.closePath()
+            c.restore()
+
+        }
+
+        if(this.fillcolor){
+
+            c.save()
+            c.translate(this.x , this.y)
+            c.beginPath()
+            c.fillStyle = this.fillcolor
+            c.rect(-this.size/2 , -this.size/2 , this.size , this.size)
+            c.fill()
+            c.closePath()
+            c.restore()
         }
        
     }
