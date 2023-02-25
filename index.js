@@ -13,7 +13,7 @@ canvas.width = w * devicePixelRatio
 canvas.height = h * devicePixelRatio 
 
 //variables
-let columns = 75
+let columns = 85
 let size = canvas.width / columns
 let rows = Math.floor(canvas.height / size)
 let nodes = []
